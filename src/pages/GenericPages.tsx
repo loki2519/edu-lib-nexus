@@ -118,7 +118,7 @@ export const SubjectPopularity = () => (
     <PageHeader title="Subject Popularity" description="Most searched and downloaded subjects" />
     <DataTable
       columns={[
-        { header: "Rank", accessor: (_, i) => <span className="font-bold text-primary">#{popularityData.indexOf(_) + 1}</span> },
+        { header: "Rank", accessor: (row) => <span className="font-bold text-primary">#{popularityData.indexOf(row) + 1}</span> },
         { header: "Subject", accessor: "subject" },
         { header: "Code", accessor: "code" },
         { header: "Searches", accessor: "searches" },
