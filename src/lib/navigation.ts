@@ -89,6 +89,7 @@ export const adminNav: NavItem[] = [
       ]},
     ],
   },
+  { title: "Announcements", url: "/admin/announcements", icon: BookOpen },
   { title: "Guide", url: "/admin/guide", icon: BookOpen },
 ];
 

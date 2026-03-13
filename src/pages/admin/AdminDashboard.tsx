@@ -40,6 +40,7 @@ const AdminDashboard = () => {
   const issued = mockBooks.filter(b => b.status === "Issued").length;
   const lost = mockBooks.filter(b => b.status === "Lost").length;
   const withdrawn = mockBooks.filter(b => b.status === "Withdrawn").length;
+  const returned = 5; // mock returned count
   const visitorsToday = mockRFIDLogs.filter(l => l.date === "2026-03-12").length;
 
   return (
@@ -50,10 +51,11 @@ const AdminDashboard = () => {
         <StatsCard title="Total Books" value={totalBooks} icon={BookOpen} color="primary" trend="+12 this month" trendUp />
         <StatsCard title="Available" value={available} icon={BookCopy} color="success" />
         <StatsCard title="Issued" value={issued} icon={Clock} color="info" />
-        <StatsCard title="Lost" value={lost} icon={AlertTriangle} color="destructive" />
+        <StatsCard title="Returned" value={returned} icon={BookCopy} color="success" trend="+2 today" trendUp />
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+        <StatsCard title="Lost" value={lost} icon={AlertTriangle} color="destructive" />
         <StatsCard title="Withdrawn" value={withdrawn} icon={XCircle} color="warning" />
         <StatsCard title="Question Papers" value={mockQuestionPapers.length} icon={FileText} color="primary" />
         <StatsCard title="Visitors Today" value={visitorsToday} icon={Users} color="success" trend="+3 vs yesterday" trendUp />
