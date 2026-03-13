@@ -26,6 +26,7 @@ import BranchOverview from "@/pages/admin/BranchOverview";
 import ReportIssued from "@/pages/admin/ReportIssued";
 import ReturnedBooks from "@/pages/admin/ReturnedBooks";
 import Guide from "@/pages/admin/Guide";
+import Announcements from "@/pages/admin/Announcements";
 
 // Student pages
 import StudentDashboard from "@/pages/student/StudentDashboard";
