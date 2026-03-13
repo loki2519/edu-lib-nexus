@@ -24,6 +24,8 @@ import LostBooks from "@/pages/admin/LostBooks";
 import WithdrawBooks from "@/pages/admin/WithdrawBooks";
 import BranchOverview from "@/pages/admin/BranchOverview";
 import ReportIssued from "@/pages/admin/ReportIssued";
+import ReturnedBooks from "@/pages/admin/ReturnedBooks";
+import Guide from "@/pages/admin/Guide";
 
 // Student pages
 import StudentDashboard from "@/pages/student/StudentDashboard";
