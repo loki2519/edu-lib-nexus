@@ -58,7 +58,7 @@ const NavItemComponent = ({ item, depth = 0, collapsed }: { item: NavItem; depth
           onClick={() => setOpen(!open)}
           className={cn(
             "w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-colors",
-            isChildActive ? "text-sidebar-primary-foreground bg-sidebar-accent" : "text-sidebar-foreground hover:bg-sidebar-accent",
+            isChildActive ? "text-primary font-medium bg-sidebar-accent" : "text-sidebar-foreground hover:bg-sidebar-accent",
             depth > 0 && "text-[13px]"
           )}
           style={{ paddingLeft: `${12 + depth * 12}px` }}

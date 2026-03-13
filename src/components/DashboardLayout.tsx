@@ -77,6 +77,18 @@ export const DashboardLayout = () => {
 
   const results = getSearchResults(searchQuery, role);
 
+  const defaultAnnouncements = [
+    "📚 Library will remain closed on 15th March for maintenance.",
+    "🎓 New books on Artificial Intelligence have been added to the Main Library.",
+    "⏰ Library timings extended till 9 PM during exam season.",
+    "📋 Question papers for Mid Semester 2025-26 are now available for download.",
+  ];
+
+  const [announcements] = useState<string[]>(() => {
+    const saved = localStorage.getItem("edulib-announcements");
+    return saved ? JSON.parse(saved) : defaultAnnouncements;
+  });
+
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       if (searchRef.current && !searchRef.current.contains(e.target as Node)) setShowResults(false);
@@ -162,6 +174,16 @@ export const DashboardLayout = () => {
             </Button>
           </div>
         </header>
+        {/* Announcement Ticker - admin only */}
+        {role === "admin" && (
+          <div className="bg-primary/5 border-b border-border overflow-hidden shrink-0">
+            <div className="py-1.5 whitespace-nowrap animate-marquee">
+              {announcements.map((text, i) => (
+                <span key={i} className="inline-block mr-16 text-xs text-foreground font-medium">{text}</span>
+              ))}
+            </div>
+          </div>
+        )}
         {/* Content */}
         <main className="flex-1 overflow-y-auto p-6 bg-background">
           <Outlet />
